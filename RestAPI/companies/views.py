@@ -14,9 +14,12 @@ class StockList(APIView):
         stocks = Stock.objects.all()
         serializer = StockSerializer(stocks, many=True)
         return Response(serializer.data)
-    def post(self):
-        print "Hello mtfcs"
-        pass
+    def post(self, request):
+        Stock.objects.create(ticker=request.POST['ticker'], open=request.POST['open'],
+                             close=request.POST['close'], volume=request.POST['volume'])
+        stocks = Stock.objects.all()
+        serializer = StockSerializer(stocks, many=True)
+        return Response(serializer.data)
 
 class ViewStock(APIView):
 
