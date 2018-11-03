@@ -8,7 +8,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=250)
     password = models.CharField(max_length=250, default='')
     email = models.EmailField(max_length=100, unique=True)
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=15)
     age = models.IntegerField(default=0)
     city = models.CharField(max_length=250)
     size = models.CharField(max_length=5)
