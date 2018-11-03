@@ -29,6 +29,7 @@ class Marathon(models.Model):
 class Club(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=10000)
+    price = models.IntegerField(default=0)
     photos = models.CharField(max_length=10000)
 
 class Product(models.Model):
