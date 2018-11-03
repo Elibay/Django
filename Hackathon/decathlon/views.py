@@ -19,7 +19,6 @@ class FunctionView(APIView):
     def post(self, request):
         email = request.POST.get('email', False)
         password = request.POST.get('password', False)
-
         user = Customer.objects.filter(email=email, password=password).first()
         print user
         if user:
@@ -27,3 +26,4 @@ class FunctionView(APIView):
             return Response({'code': 0, 'user': serializer.data})
         else:
             return Response({'code': 1, 'message': 'error'})
+class Register(APIView):

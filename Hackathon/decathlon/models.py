@@ -37,3 +37,5 @@ class Product(models.Model):
     size = models.CharField(max_length=10)
     price = models.IntegerField(default=0)
     photos = models.CharField(max_length=10000)
+    favorite = models.BooleanField(default=False)
+
