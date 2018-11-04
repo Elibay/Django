@@ -8,6 +8,7 @@ admin.site.register(Customer)
 admin.site.register(Event)
 admin.site.register(Club)
 admin.site.register(Product)
+admin.site.register(Transaction)
 
 
 # Register your models here.
